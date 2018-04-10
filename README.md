@@ -16,9 +16,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 - Ruby 2.1.5
 - Bundler
+- Github API token in order to remove requests limits. Go [here](https://github.com/settings/tokens) to create one - Add a read permission to public repositories.
 
-```
+```bash
 $ gem install bundler
+$ export TOKEN=XXXXXXXXXXXXXXX # To set the token as an environment variable
 ```
 
 ### Installing
@@ -34,7 +36,7 @@ You can now access the local version at `http://localhost:9292/`.
 
 ## Deployment
 
-Can be deployed directly to herokuapp.com. Simply create a new heroku project and push to the new heroku remote.
+Can be deployed directly to herokuapp.com. Simply create a new heroku project and push to the new heroku remote. Don't forget to add the `token` as an env variable (config vars).
 
 ## Built With
 
