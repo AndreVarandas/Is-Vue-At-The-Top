@@ -1,0 +1,132 @@
+@import 'reset';
+@import 'variables';
+
+// Layout
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $main_color_dark;
+    color: $text_color_on_main;
+    font-family: $sans;
+}
+
+header.header {
+    font-family: $serif;
+    align-self: center;
+    margin: 30px 0;
+    a {
+        color: #c1c1c1;
+        text-decoration: none;
+        font-size: 2em;
+    }
+}
+
+main.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+footer.footer {
+    align-self: center;
+    padding: 20px;
+    font-size: $font_small;
+    color: $main_color_light;
+    flex-shrink: 1;
+    a {
+        color: $main_color_light;
+    }
+}
+
+// Home
+.result {
+    align-self: center;
+    text-align: center;
+    font-size: $font_huge;
+}
+
+.answer.fail {
+    background: -webkit-linear-gradient(left,#ff0534, #ff07ac);
+    background: linear-gradient(to right,#ff0534, #ff07ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.answer.success {
+    background: -webkit-linear-gradient(left,#4ff10e, #caff76);
+    background: linear-gradient(to right,#4ff10e, #caff76);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.result-missing-stars {
+    color: $main_color_light;
+    font-size: 0.50em;
+    margin-top: 20px;
+}
+
+.results {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.result-details {
+    text-align: center;
+}
+
+.result-details-info {
+    margin-top: 30px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    svg { margin: 0 8px; color: $text_color_on_main; }
+    p { color: $main_color_light; font-size: $font_big; }
+}
+
+.vue-logo, .react-logo {
+    color: $text_color_on_main;
+    font-size: 10em;
+    margin: 20px 0;
+    -webkit-transition: transform 500ms ease-in-out;
+    -webkit-transform: translate(0); /* Chrome, Safari, Opera */
+    transform: translate(0);
+    transition: transform 500ms ease-in-out;
+}
+
+.vue-logo:hover, .react-logo:hover {
+    -ms-transform: translate(0, -10px); /* IE 9 */
+    -webkit-transform: translate(0, -10px); /* Chrome, Safari, Opera */
+    transform: translate(0, -10px);
+}
+
+// Utils - Not Found Page - 404
+.four-o-four {
+    display: flex;
+    text-align: center;
+    padding: 0 20px;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: space-around;
+    p:first-child {
+        font-size: $font_huge;
+        color: $secondary_color;
+    }
+    p {
+        color: $secondary_color;
+        a { color: $secondary_color; }
+        a:hover { color: $secondary_color; }
+    }
+}
+
+// Media
+@media (max-width: 600px) {
+    .results {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin-top: 30px;
+    }
+}
